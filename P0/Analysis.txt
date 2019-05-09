@@ -1,0 +1,59 @@
+Big O analysis for Investigating Texts and Calls project
+
+Reading the two files in is of time "2n" since each line of the file must be
+read (first n) and then written, into a list (second n).  This will be the case
+for each of the assigned tasks.
+
+Task0:
+ 2n for conversions to datetime
+ n for searching for earliest text
+ n for searching for latest call
+
+ O(4n) total
+
+Task1:
+
+2 for loops, each of which touch each item in a list.  Therefore:
+O(2n) total
+
+
+Task2:
+
+Constructing a dictionary is O(n)
+Counter object also must iterate so there is another n.
+total: o(2n)
+
+Task3:
+part A:
+  creating bangalore_recipients evaluates each item in list, so there is one n.
+  compiling regex's doesn't cost anything.
+  building area codes dictionary costs n, the length of the dictionary.
+  sorting the area codes costs nlogn
+  printing the area codes costs n
+
+  total:  3n + nlogn --> O(n)
+
+part B:
+  building fixed_line_to_fixed_line costs n
+  total:  O(n)
+
+
+Task4:
+
+I used zip to quickly get the transpose of the data that I wanted.
+The zip function itself runs in O(1), but the interpreter must convert the
+parameters to an array, so there is an O(n) cost. Exhausting the zip object to
+to extract the data I want is also O(n).  So O(2n)
+
+This task is mostly set operations from here on.  Each time you build a set,
+the cost is the length of the list, since each item has to be put into the set.
+I don't think the creation of the hash costs anything for this analysis.
+So O(4n)
+
+The set operations aren't free.  Each time I find the difference
+between two sets, the cost is n, the size of the calls_from set.  Since I'm
+finding a difference 4 times, I'll spend 4n on finding possible_telemarketers.
+
+Sorting the list of telemarketers is nlogn.
+
+Total:  2n + 4n + 4n + nlogn --> O(n)
