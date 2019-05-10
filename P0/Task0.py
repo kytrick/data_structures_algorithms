@@ -38,4 +38,4 @@ for c in calls:
 
 latest_call = max(calls_datetime, key = lambda x:x[2])
 
-print("Last record of calls, " + str(latest_call[0]) +  " calls " + str(latest_call[1]) + " at time " + str(latest_call[2]))
+print("Last record of calls, " + str(latest_call[0]) +  " calls " + str(latest_call[1]) + " at time " + str(latest_call[2]) + "lasting " + str(latest_call[3]) + " seconds")

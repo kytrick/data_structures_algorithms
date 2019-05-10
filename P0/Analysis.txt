@@ -20,8 +20,10 @@ O(2n) total
 Task2:
 
 Constructing a dictionary is O(n)
-Counter object also must iterate so there is another n.
-total: o(2n)
+Counter object creation also must iterate so there is another n.
+Counter's most_common returns a sorted list of counts, so there is an O(nlogn)
+
+total: O(2n) + O(nlogn) --> O(nlogn)
 
 Task3:
 part A:
@@ -31,7 +33,7 @@ part A:
   sorting the area codes costs nlogn
   printing the area codes costs n
 
-  total:  3n + nlogn --> O(n)
+  total:  O(3n) + O(nlogn) --> O(nlogn)
 
 part B:
   building fixed_line_to_fixed_line costs n
@@ -56,4 +58,4 @@ finding a difference 4 times, I'll spend 4n on finding possible_telemarketers.
 
 Sorting the list of telemarketers is nlogn.
 
-Total:  2n + 4n + 4n + nlogn --> O(n)
+Total:  2n + 4n + 4n + nlogn --> O(nlogn)
